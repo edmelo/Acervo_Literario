@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" prefHeight="577.0" prefWidth="1000.0" spacing="10.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homepage.DefaultScreenController">
+   <children>
+      <Button contentDisplay="TOP" defaultButton="true" focusTraversable="false" graphicTextGap="20.0" mnemonicParsing="false" onAction="#goToAddBooks" prefHeight="430.0" prefWidth="430.0" styleClass="home-btn" text="Adicionar Livros" textAlignment="CENTER" wrapText="true">
+         <graphic>
+         </graphic>
+         <font>
+            <Font name="Comic Sans MS Bold" size="55.0" />
+         </font>
+      </Button>
+      <Button contentDisplay="TOP" defaultButton="true" focusTraversable="false" graphicTextGap="20.0" mnemonicParsing="false" onAction="#goToShowBooks" prefHeight="430.0" prefWidth="430.0" styleClass="home-btn" text="Acervo" textAlignment="CENTER">
+         <graphic>
+         </graphic>
+         <font>
+            <Font name="Comic Sans MS Bold" size="55.0" />
+         </font>
+      </Button>
+   </children>
+</HBox>

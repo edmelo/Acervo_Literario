@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="50.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dialog.EditFieldController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+    <children>
+        <TextField fx:id="FieldNameTextField" onAction="#confirmAction" prefHeight="44.0" prefWidth="460.0" promptText="Nome" styleClass="text-field-normal">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </TextField>
+        <HBox alignment="CENTER" spacing="60.0">
+            <children>
+                <Button cancelButton="true" onAction="#DiscardAction" prefWidth="160.0" text="Descartar">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Button>
+                <Button defaultButton="true" onAction="#confirmAction" prefWidth="160.0" text="Confirmar">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>

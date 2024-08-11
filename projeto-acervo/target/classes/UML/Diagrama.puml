@@ -1,0 +1,79 @@
+@startuml
+
+' Incluir todos os pacotes e classes do projeto
+!define root_package projeto_sbi
+' Incluir todos os pacotes do projeto
+package root_package {
+    package model {
+        class Livro
+        class Usuario
+        class Exemplar
+        class Emprestimo
+        class Reserva
+        class Multa
+        class Notificacao
+        class Configuracao
+        class Relatorio
+        ' Adicione outras classes conforme necessário
+    }
+    package controller {
+        class ControleLivros
+        class ControleUsuarios
+        class ControleExemplares
+        class ControleEmprestimos
+        class ControleReservas
+        class ControleMultas
+        class ControleNotificacoes
+        class ControleConfiguracoes
+        class ControleRelatorios
+        ' Adicione outras classes conforme necessário
+    }
+    package view {
+        class TelaPrincipal
+        class TelaLivros
+        class TelaUsuarios
+        class TelaExemplares
+        class TelaEmprestimos
+        class TelaReservas
+        class TelaMultas
+        class TelaNotificacoes
+        class TelaConfiguracoes
+        class TelaRelatorios
+        ' Adicione outras classes conforme necessário
+    }
+    package dao {
+        class LivroDAO
+        class UsuarioDAO
+        class ExemplarDAO
+        class EmprestimoDAO
+        class ReservaDAO
+        class MultaDAO
+        class NotificacaoDAO
+        class ConfiguracaoDAO
+        class RelatorioDAO
+        ' Adicione outras classes conforme necessário
+    }
+    package util {
+        class Conexao
+        class Validacao
+        class NotificacaoEmail
+        class NotificacaoSMS
+        class NotificacaoWhatsApp
+        ' Adicione outras classes conforme necessário
+    }
+    ' Adicione outros pacotes conforme necessário
+}
+
+' Incluir todas as classes do pacote principal
+package root_package {
+    class ControleExemplares
+    class LivroModelo
+    ' Adicione outras classes conforme necessário
+}
+
+' Definir relações entre as classes
+ControleExemplares --> LivroModelo : usa
+LivroModelo --> Livro : usa
+
+
+@enduml

@@ -46,17 +46,17 @@ public class TelaInicial extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{0, 0, 0};
-		gbl_contentPane.rowHeights = new int[]{0, 0, 0, 0};
+		gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0};
+		gbl_contentPane.rowHeights = new int[]{0, 0, 0, 0, 0};
 		gbl_contentPane.columnWeights = new double[]{1.0, 1.0, 1.0};
-		gbl_contentPane.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0};
+		gbl_contentPane.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0};
 		contentPane.setLayout(gbl_contentPane);
 
 		JLabel lblBemVindo = new JLabel("<html><div style='text-align: center;'>"
 				+ "Bem Vindo!<br><br>"
 				+ "Este é um projeto de um cadastro de acervo literário pessoal.<br>"
 				+ "Este projeto compõe a nota da disciplina de LPOO 2024.2 do IFPE-Paulista.<br>"
-				+ "Orientado pelo professor Bruno Cartaxo.<br><br>"
+				+ "Orientado pelo professor Bruno Cartaxo.<br>"
 				+ "CODIFICADO PELOS ALUNOS:<br>"
 				+ "Ednaldo Batista de Melo<br>"
 				+ "Hudson Pessoa dos Santos<br>"
@@ -66,6 +66,7 @@ public class TelaInicial extends JFrame {
 				+ "Robert Alan Dos Santos França<br>"
 				+ "Erick Bruno vera cruz carneiro<br>"
 				+ "Thuanny Helen de Souza França<br>"
+				+ "Thiago Francisco Ferreira Lopes<br>"
 				+ "</div></html>");
 		lblBemVindo.setFont(new Font("Dialog", Font.BOLD, 20));
 		GridBagConstraints gbc_lblBemVindo = new GridBagConstraints();
@@ -85,7 +86,7 @@ public class TelaInicial extends JFrame {
 		GridBagConstraints gbc_btnIniciar = new GridBagConstraints();
 		gbc_btnIniciar.insets = new Insets(0, 0, 5, 0);
 		gbc_btnIniciar.gridx = 1;
-		gbc_btnIniciar.gridy = 2;
+		gbc_btnIniciar.gridy = 3;
 		contentPane.add(btnIniciar, gbc_btnIniciar);
 	}
 }

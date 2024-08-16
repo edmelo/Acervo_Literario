@@ -51,7 +51,7 @@ public class ConexaoDados {
 		try (Connection con = DriverManager.getConnection(url + "sib", usuario, senha); 
 				Statement stmt = con.createStatement()) {
 
-			InputStream inputStream = getClass().getResourceAsStream("/bd/sib-database.sql");
+			InputStream inputStream = getClass().getResourceAsStream("/bd/acervo-database.sql");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 			StringBuilder script = new StringBuilder();
 
@@ -86,7 +86,7 @@ public class ConexaoDados {
 		try (Connection con = DriverManager.getConnection(url + "sib", usuario, senha); 
 				Statement stmt = con.createStatement()) {
 
-			InputStream inputStream = getClass().getResourceAsStream("/bd/sib-insercao-dados.sql");
+			InputStream inputStream = getClass().getResourceAsStream("/bd/acervo-insercao-dados.sql");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 			StringBuilder script = new StringBuilder();
 

@@ -59,7 +59,7 @@ public class VisualizarAmigo extends JFrame {
 
 		// Set up the content pane with a background color and border
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(39, 232, 182, 208));
+		contentPane.setBackground(new Color(39, 164, 232, 208));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 

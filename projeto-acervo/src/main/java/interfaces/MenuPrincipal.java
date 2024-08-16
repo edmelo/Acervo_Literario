@@ -83,7 +83,7 @@ public class MenuPrincipal extends JFrame {
         // Define a cor de fundo do painel de conteúdo
 
         contentPane.setForeground(new Color(0, 0, 0));
-        contentPane.setBackground(new Color(39, 232, 182, 208));
+        contentPane.setBackground(new Color(39, 164, 232, 208));
         contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 
         setContentPane(contentPane);

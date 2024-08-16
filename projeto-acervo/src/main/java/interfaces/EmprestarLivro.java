@@ -71,7 +71,7 @@ public class EmprestarLivro extends JFrame {
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(39, 232, 182, 208)); // Aplicar a cor de fundo
+		contentPane.setBackground(new Color(39, 164, 232, 208)); // Aplicar a cor de fundo
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
@@ -101,7 +101,7 @@ public class EmprestarLivro extends JFrame {
 		});
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(39, 232, 182, 208)); // Aplicar a cor de fundo
+		panel.setBackground(new Color(39, 164, 232, 208)); // Aplicar a cor de fundo
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.gridx = 1;
 		gbc_panel.gridy = 0;

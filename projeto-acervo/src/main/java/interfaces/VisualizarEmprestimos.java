@@ -62,7 +62,7 @@ public class VisualizarEmprestimos extends JFrame {
 		setExtendedState(JFrame.MAXIMIZED_BOTH); // Set the frame to adjust to the user's screen size
 		setResizable(false); // Prevent the frame from being resized
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(39, 232, 182, 208)); // Set the background color
+		contentPane.setBackground(new Color(39, 164, 232, 208)); // Set the background color
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 

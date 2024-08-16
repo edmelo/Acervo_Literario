@@ -85,7 +85,7 @@ public class Emprestado extends JFrame {
 		contentPane.setLayout(gbl_contentPane);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(39, 232, 182, 208));
+		panel.setBackground(new Color(39, 164, 232, 208));
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.gridx = 0;
 		gbc_panel.gridy = 0;

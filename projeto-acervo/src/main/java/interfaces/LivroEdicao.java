@@ -131,7 +131,7 @@ public class LivroEdicao extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(39, 232, 182, 208)); // Set the background color
+		contentPane.setBackground(new Color(39, 164, 232, 208));// Set the background color
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
@@ -142,7 +142,7 @@ public class LivroEdicao extends JFrame {
 		contentPane.setLayout(gbl_contentPane);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(39, 232, 182, 208)); // Set the background color
+		panel.setBackground(new Color(39, 164, 232, 208)); // Set the background color
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.gridwidth = 2;
 		gbc_panel.insets = new Insets(15, 20, 10, 20);

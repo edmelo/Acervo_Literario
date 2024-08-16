@@ -54,7 +54,7 @@ public class CadastrarLivro extends JFrame {
 		setBounds(100, 100, 824, 510);
 		setResizable(false); // Add this line to make the frame non-resizable
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(39, 232, 182, 208));
+		contentPane.setBackground(new Color(39, 164, 232, 208));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
@@ -65,7 +65,7 @@ public class CadastrarLivro extends JFrame {
 		contentPane.setLayout(gbl_contentPane);
 
 		JPanel panelCadastro = new JPanel();
-		panelCadastro.setBackground(new Color(39, 232, 182, 208));
+		panelCadastro.setBackground(new Color(39, 164, 232, 208));
 		GridBagConstraints gbc_panelCadastro = new GridBagConstraints();
 		gbc_panelCadastro.gridx = 0;
 		gbc_panelCadastro.gridy = 0;

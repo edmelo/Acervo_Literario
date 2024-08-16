@@ -80,7 +80,7 @@ public class ControleAcervo extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 774, 478);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(39, 232, 182, 208));
+		contentPane.setBackground(new Color(39, 164, 232, 208));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
@@ -100,7 +100,7 @@ public class ControleAcervo extends JFrame {
 		contentPane.add(lblNewLabel, gbc_lblNewLabel);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(39, 232, 182, 208));
+		panel.setBackground(new Color(39, 164, 232, 208));
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.gridheight = 2;
 		gbc_panel.gridx = 1;

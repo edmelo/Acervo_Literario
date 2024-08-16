@@ -64,7 +64,7 @@ public class LivrosLista extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false); // Configurar a tela para não ser redimensionável
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(39, 232, 182, 208));
+		contentPane.setBackground(new Color(39, 164, 232, 208));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();

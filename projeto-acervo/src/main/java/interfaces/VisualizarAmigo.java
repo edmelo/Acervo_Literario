@@ -28,9 +28,10 @@ public class VisualizarAmigo extends JFrame {
 	private JTextField txtEmail;
 	private JTextField txtEmprestimosAtivos;
 
-	/**
-	 * Launch the application.
-	 */
+
+/* O método main desta classe é responsável por iniciar a aplicação,
+instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -45,7 +46,7 @@ public class VisualizarAmigo extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Cria a janela de visualização de um amigo.
 	 */
 	public VisualizarAmigo() {
 		final LeitorControlador controlador = new LeitorControlador();

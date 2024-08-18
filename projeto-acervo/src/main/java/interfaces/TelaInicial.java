@@ -57,16 +57,8 @@ public class TelaInicial extends JFrame {
 				+ "Este é um projeto de um cadastro de acervo literário pessoal.<br>"
 				+ "Este projeto compõe a nota da disciplina de LPOO 2024.2 do IFPE-Paulista.<br>"
 				+ "Orientado pelo professor Bruno Cartaxo.<br>"
-				+ "CODIFICADO PELOS ALUNOS:<br>"
+				+ "CODIFICADO POR:<br>"
 				+ "Ednaldo Batista de Melo<br>"
-				+ "Hudson Pessoa dos Santos<br>"
-				+ "Arthur arruda teixeira<br>"
-				+ "Felipe da Silva Ribeiro<br>"
-				+ "André Luiz José Sales<br>"
-				+ "Robert Alan Dos Santos França<br>"
-				+ "Erick Bruno vera cruz carneiro<br>"
-				+ "Thuanny Helen de Souza França<br>"
-				+ "Thiago Francisco Ferreira Lopes<br>"
 				+ "</div></html>");
 		lblBemVindo.setFont(new Font("Dialog", Font.BOLD, 20));
 		GridBagConstraints gbc_lblBemVindo = new GridBagConstraints();
@@ -76,7 +68,7 @@ public class TelaInicial extends JFrame {
 		contentPane.add(lblBemVindo, gbc_lblBemVindo);
 
 		JButton btnIniciar = new JButton("Iniciar");
-		btnIniciar.setFont(new Font("Dialog", Font.BOLD, 20));
+		btnIniciar.setFont(new Font("Dialog", Font.BOLD, 30));
 		btnIniciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();

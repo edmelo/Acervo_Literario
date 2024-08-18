@@ -1,3 +1,4 @@
+// Classe VisualizarAmigo
 package interfaces;
 
 import java.awt.EventQueue;
@@ -19,6 +20,11 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import javax.swing.JScrollPane;
+import javax.swing.JList;
+import java.util.List;
+import java.util.ArrayList;
+
 public class VisualizarAmigo extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -27,9 +33,9 @@ public class VisualizarAmigo extends JFrame {
 	private JTextField txtNome;
 	private JTextField txtEmail;
 	private JTextField txtEmprestimosAtivos;
+	private JList<String> listaAmigos;
+	private LeitorControlador controlador; // Declarar a variável controlador
 
-	/* O método main desta classe é responsável por iniciar a aplicação,
-    instanciando um objeto da classe VisualizarAmigo e tornando-o visível. */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -43,24 +49,20 @@ public class VisualizarAmigo extends JFrame {
 		});
 	}
 
-	/* Cria a janela de visualização de um amigo. */
 	public VisualizarAmigo() {
-		final LeitorControlador controlador = new LeitorControlador();
+		controlador = new LeitorControlador(); // Inicializar a variável controlador
 		final JButton btnEditarDados = new JButton("Editar dados");
 		final JButton btnAtualizarDados = new JButton("Atualizar dados");
 
-		// Configura o frame para ajustar ao tamanho da tela do usuário e impedir redimensionamento
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setResizable(false);
 
-		// Configura o painel de conteúdo com uma cor de fundo e borda
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(39, 164, 232, 208));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		// Usa GridBagLayout para gerenciamento flexível do layout
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[]{50, 395, 97, 0};
 		gbl_contentPane.rowHeights = new int[]{44, 88, 0};
@@ -68,7 +70,6 @@ public class VisualizarAmigo extends JFrame {
 		gbl_contentPane.rowWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 
-		// Adiciona um rótulo de título
 		JLabel lblNewLabel_1 = new JLabel("VISUALIZAR AMIGO");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 25));
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
@@ -78,7 +79,6 @@ public class VisualizarAmigo extends JFrame {
 		gbc_lblNewLabel_1.gridy = 0;
 		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
 
-		// Adiciona um botão "Voltar" para retornar ao menu principal
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -94,7 +94,6 @@ public class VisualizarAmigo extends JFrame {
 		gbc_btnVoltar.gridy = 0;
 		contentPane.add(btnVoltar, gbc_btnVoltar);
 
-		// Adiciona um rótulo e campo de texto para entrada de CPF
 		JLabel lblCpf = new JLabel("Digite o CPF:");
 		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblCpf = new GridBagConstraints();
@@ -114,23 +113,17 @@ public class VisualizarAmigo extends JFrame {
 		gbc_textCpf.gridy = 1;
 		contentPane.add(txtCpf, gbc_textCpf);
 
-		// Adiciona um botão "Buscar Amigo" para buscar um leitor pelo CPF
 		JButton btnBuscarLeitor = new JButton("Buscar Amigo");
 		btnBuscarLeitor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String cpf = txtCpf.getText();
 				try {
-					LeitorModelo leitor = controlador.buscarLeitorPorCpf(cpf);
-					txtNome.setText(leitor.getNome());
-					txtEmail.setText(leitor.getEmail());
-					txtEmprestimosAtivos.setText("" + leitor.getEmprestimo());
-					btnEditarDados.setEnabled(true);
+					LeitorModelo amigo = controlador.buscarLeitorPorCpf(cpf);
+					txtNome.setText(amigo.getNome());
+					txtEmail.setText(amigo.getEmail());
+					txtEmprestimosAtivos.setText(String.valueOf(amigo.getEmprestimosAtivos()));
 				} catch (ExcecaoControlador e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-					e1.printStackTrace();
-				} catch (Exception exc) {
-					JOptionPane.showMessageDialog(null, "Algum erro inesperado aconteceu.", "Error", JOptionPane.ERROR_MESSAGE);
-					exc.printStackTrace();
+					JOptionPane.showMessageDialog(null, e1.getMessage());
 				}
 			}
 		});
@@ -142,7 +135,6 @@ public class VisualizarAmigo extends JFrame {
 		gbc_btnBuscarLeitor.gridy = 1;
 		contentPane.add(btnBuscarLeitor, gbc_btnBuscarLeitor);
 
-		// Adiciona um rótulo e campo de texto para o nome do leitor
 		JLabel lblNome = new JLabel("Nome:");
 		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblNome = new GridBagConstraints();
@@ -163,7 +155,6 @@ public class VisualizarAmigo extends JFrame {
 		gbc_txtNome.gridy = 2;
 		contentPane.add(txtNome, gbc_txtNome);
 
-		// Adiciona um rótulo e campo de texto para o e-mail do leitor
 		JLabel lblEmail = new JLabel("E-mail:");
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblEmail = new GridBagConstraints();
@@ -184,7 +175,6 @@ public class VisualizarAmigo extends JFrame {
 		gbc_txtEmail.gridy = 3;
 		contentPane.add(txtEmail, gbc_txtEmail);
 
-		// Adiciona um rótulo e campo de texto para o número de empréstimos ativos
 		JLabel lblEmprestimos = new JLabel("Empréstimos ativos:");
 		lblEmprestimos.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblEmprestimos = new GridBagConstraints();
@@ -205,7 +195,6 @@ public class VisualizarAmigo extends JFrame {
 		gbc_txtEmprestimosAtivos.gridy = 4;
 		contentPane.add(txtEmprestimosAtivos, gbc_txtEmprestimosAtivos);
 
-		// Adiciona um botão "Editar dados" para habilitar a edição dos dados do leitor
 		btnEditarDados.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnEditarDados.setEnabled(false);
 		btnEditarDados.addActionListener(new ActionListener() {
@@ -222,7 +211,6 @@ public class VisualizarAmigo extends JFrame {
 		gbc_btnEditarDados.gridy = 6;
 		contentPane.add(btnEditarDados, gbc_btnEditarDados);
 
-		// Adiciona um botão "Atualizar dados" para salvar os dados atualizados do leitor
 		btnAtualizarDados.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnAtualizarDados.setEnabled(false);
 		btnAtualizarDados.addActionListener(new ActionListener() {
@@ -232,19 +220,12 @@ public class VisualizarAmigo extends JFrame {
 				String cpf = txtCpf.getText();
 				try {
 					LeitorModelo leitor = controlador.buscarLeitorPorCpf(cpf);
-					if (!email.trim().isEmpty()) {
-						controlador.atualizarEmailLeitor(leitor, email);
-					}
-					if (!nome.trim().isEmpty()) {
-						controlador.atualizarNomeLeitor(leitor, nome);
-					}
-					JOptionPane.showMessageDialog(null, "Dados do leitor atualizados com sucesso", "Success", JOptionPane.INFORMATION_MESSAGE);
+					controlador.atualizarNomeLeitor(leitor, nome);
+					controlador.atualizarEmailLeitor(leitor, email);
+					JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso!");
+					atualizarListaAmigos(); // Atualizar a lista de amigos
 				} catch (ExcecaoControlador e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-					e1.printStackTrace();
-				} catch (Exception exc) {
-					JOptionPane.showMessageDialog(null, "Algum erro inesperado aconteceu.", "Error", JOptionPane.ERROR_MESSAGE);
-					exc.printStackTrace();
+					JOptionPane.showMessageDialog(null, e1.getMessage());
 				}
 			}
 		});
@@ -254,5 +235,37 @@ public class VisualizarAmigo extends JFrame {
 		gbc_btnAtualizarDados.gridx = 2;
 		gbc_btnAtualizarDados.gridy = 6;
 		contentPane.add(btnAtualizarDados, gbc_btnAtualizarDados);
+
+		// Adicionar lista de amigos
+		listaAmigos = new JList<>(getAmigos());
+		JScrollPane scrollPane = new JScrollPane(listaAmigos);
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.gridwidth = 3;
+		gbc_scrollPane.insets = new Insets(10, 50, 10, 50);
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+		gbc_scrollPane.gridx = 0;
+		gbc_scrollPane.gridy = 5;
+		contentPane.add(scrollPane, gbc_scrollPane);
+	}
+
+	// Método para obter a lista de amigos
+	private String[] getAmigos() {
+		List<LeitorModelo> amigos = new ArrayList<>();
+		try {
+			amigos = controlador.buscarTodosLeitores();
+		} catch (ExcecaoControlador e) {
+			e.printStackTrace();
+		}
+		String[] lista = new String[amigos.size()];
+		for (int i = 0; i < amigos.size(); i++) {
+			LeitorModelo amigo = amigos.get(i);
+			lista[i] = amigo.getNome() + " - " + amigo.getCpf();
+		}
+		return lista;
+	}
+
+	// Método para atualizar a lista de amigos
+	private void atualizarListaAmigos() {
+		listaAmigos.setListData(getAmigos());
 	}
 }

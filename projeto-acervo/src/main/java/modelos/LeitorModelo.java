@@ -1,59 +1,71 @@
+// Classe LeitorModelo
 package modelos;
 
 public class LeitorModelo {
-	
 	private String nome;
-	private String email;
 	private String cpf;
-	private int emprestimo = 0;
-	
+	private String email;
+	private int emprestimosAtivos;
+
+	// Construtores, getters e setters
+
+	public LeitorModelo() {}
+
 	public LeitorModelo(String nome, String cpf, String email) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
 	}
-	
-	public LeitorModelo() {
-	}
-	
 
 	public String getNome() {
-		return this.nome;
+		return nome;
 	}
-	
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 	public String getCpf() {
-		return this.cpf;
+		return cpf;
 	}
-	
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
+
 	public String getEmail() {
-		return this.email;
+		return email;
 	}
-	
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public int getEmprestimo() {
-		return emprestimo;
+	public int getEmprestimosAtivos() {
+		return emprestimosAtivos;
 	}
 
-	public void setEmprestimo(int emprestimo) {
-		this.emprestimo = emprestimo;
+	public void setEmprestimosAtivos(int emprestimosAtivos) {
+		this.emprestimosAtivos = emprestimosAtivos;
 	}
-	
-	public void adicionarEmprestimo(int emprestimo) {
-		this.emprestimo = this.getEmprestimo() + emprestimo;
+
+	// Adicionar o método getEmprestimo
+	public int getEmprestimo() {
+		return emprestimosAtivos;
 	}
-	
-	public void removerEmprestimo(int emprestimo) {
-		this.emprestimo = this.getEmprestimo() - emprestimo;
+
+	// Adicionar o método setEmprestimo
+	public void setEmprestimo(int emprestimosAtivos) {
+		this.emprestimosAtivos = emprestimosAtivos;
+	}
+
+	// Adicionar o método adicionarEmprestimo
+	public void adicionarEmprestimo(int quantidade) {
+		this.emprestimosAtivos += quantidade;
+	}
+
+	// adicionar o método removerEmprestimo
+	public void removerEmprestimo(int quantidade) {
+		this.emprestimosAtivos -= quantidade;
 	}
 }

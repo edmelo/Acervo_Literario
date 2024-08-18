@@ -14,8 +14,8 @@ public class AplicacaoEmail {
 	   
 	private LeitorDados leitorDados = new LeitorDados();
 	private LivroDados livroDados = new LivroDados();
-	private String meuEmail = "coloque seu email aqui";
-	private String minhaSenha = "senha do seu email";
+	private String meuEmail = "ednaldo.melo@modernacompartilha.com.br";
+	private String minhaSenha = "cfi@2022";
 	 
 		public void enviarEmailCadastro(LeitorModelo leitor) throws ExcecaoControlador {
 			

@@ -28,10 +28,8 @@ public class VisualizarAmigo extends JFrame {
 	private JTextField txtEmail;
 	private JTextField txtEmprestimosAtivos;
 
-
-/* O método main desta classe é responsável por iniciar a aplicação,
-instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
-
+	/* O método main desta classe é responsável por iniciar a aplicação,
+    instanciando um objeto da classe VisualizarAmigo e tornando-o visível. */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -45,26 +43,24 @@ instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
 		});
 	}
 
-	/**
-	 * Cria a janela de visualização de um amigo.
-	 */
+	/* Cria a janela de visualização de um amigo. */
 	public VisualizarAmigo() {
 		final LeitorControlador controlador = new LeitorControlador();
 		final JButton btnEditarDados = new JButton("Editar dados");
 		final JButton btnAtualizarDados = new JButton("Atualizar dados");
 
-		// Configure the frame to adjust to the user's screen size and prevent resizing
+		// Configura o frame para ajustar ao tamanho da tela do usuário e impedir redimensionamento
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setResizable(false);
 
-		// Set up the content pane with a background color and border
+		// Configura o painel de conteúdo com uma cor de fundo e borda
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(39, 164, 232, 208));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		// Use GridBagLayout for flexible layout management
+		// Usa GridBagLayout para gerenciamento flexível do layout
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[]{50, 395, 97, 0};
 		gbl_contentPane.rowHeights = new int[]{44, 88, 0};
@@ -72,7 +68,7 @@ instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
 		gbl_contentPane.rowWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 
-		// Add a title label
+		// Adiciona um rótulo de título
 		JLabel lblNewLabel_1 = new JLabel("VISUALIZAR AMIGO");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 25));
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
@@ -82,7 +78,7 @@ instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
 		gbc_lblNewLabel_1.gridy = 0;
 		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
 
-		// Add a "Voltar" button to return to the main menu
+		// Adiciona um botão "Voltar" para retornar ao menu principal
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -98,7 +94,7 @@ instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
 		gbc_btnVoltar.gridy = 0;
 		contentPane.add(btnVoltar, gbc_btnVoltar);
 
-		// Add a label and text field for CPF input
+		// Adiciona um rótulo e campo de texto para entrada de CPF
 		JLabel lblCpf = new JLabel("Digite o CPF:");
 		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblCpf = new GridBagConstraints();
@@ -118,7 +114,7 @@ instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
 		gbc_textCpf.gridy = 1;
 		contentPane.add(txtCpf, gbc_textCpf);
 
-		// Add a "Buscar Leitor" button to search for a reader by CPF
+		// Adiciona um botão "Buscar Amigo" para buscar um leitor pelo CPF
 		JButton btnBuscarLeitor = new JButton("Buscar Amigo");
 		btnBuscarLeitor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -146,7 +142,7 @@ instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
 		gbc_btnBuscarLeitor.gridy = 1;
 		contentPane.add(btnBuscarLeitor, gbc_btnBuscarLeitor);
 
-		// Add a label and text field for the reader's name
+		// Adiciona um rótulo e campo de texto para o nome do leitor
 		JLabel lblNome = new JLabel("Nome:");
 		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblNome = new GridBagConstraints();
@@ -167,7 +163,7 @@ instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
 		gbc_txtNome.gridy = 2;
 		contentPane.add(txtNome, gbc_txtNome);
 
-		// Add a label and text field for the reader's email
+		// Adiciona um rótulo e campo de texto para o e-mail do leitor
 		JLabel lblEmail = new JLabel("E-mail:");
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblEmail = new GridBagConstraints();
@@ -188,7 +184,7 @@ instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
 		gbc_txtEmail.gridy = 3;
 		contentPane.add(txtEmail, gbc_txtEmail);
 
-		// Add a label and text field for the number of active loans
+		// Adiciona um rótulo e campo de texto para o número de empréstimos ativos
 		JLabel lblEmprestimos = new JLabel("Empréstimos ativos:");
 		lblEmprestimos.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblEmprestimos = new GridBagConstraints();
@@ -209,7 +205,7 @@ instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
 		gbc_txtEmprestimosAtivos.gridy = 4;
 		contentPane.add(txtEmprestimosAtivos, gbc_txtEmprestimosAtivos);
 
-		// Add an "Editar dados" button to enable editing of the reader's data
+		// Adiciona um botão "Editar dados" para habilitar a edição dos dados do leitor
 		btnEditarDados.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnEditarDados.setEnabled(false);
 		btnEditarDados.addActionListener(new ActionListener() {
@@ -226,7 +222,7 @@ instanciando um objeto da classe VisualizarAmigo e tornando-o visível.*/
 		gbc_btnEditarDados.gridy = 6;
 		contentPane.add(btnEditarDados, gbc_btnEditarDados);
 
-		// Add an "Atualizar dados" button to save the updated reader's data
+		// Adiciona um botão "Atualizar dados" para salvar os dados atualizados do leitor
 		btnAtualizarDados.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnAtualizarDados.setEnabled(false);
 		btnAtualizarDados.addActionListener(new ActionListener() {

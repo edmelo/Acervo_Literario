@@ -196,7 +196,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(txtEmprestimosAtivos, gbc_txtEmprestimosAtivos);
 
 		btnEditarDados.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnEditarDados.setEnabled(false);
+		btnEditarDados.setEnabled(true);
 		btnEditarDados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				txtNome.setEditable(true);
@@ -212,7 +212,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(btnEditarDados, gbc_btnEditarDados);
 
 		btnAtualizarDados.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnAtualizarDados.setEnabled(false);
+		btnAtualizarDados.setEnabled(true);
 		btnAtualizarDados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String email = txtEmail.getText();

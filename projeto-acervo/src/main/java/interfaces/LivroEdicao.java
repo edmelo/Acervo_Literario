@@ -110,7 +110,7 @@ public class LivroEdicao extends JFrame {
 			}
 		} else {
 			try {
-				BufferedImage imagemDefault = ImageIO.read(getClass().getResource("/images/livro-generico.png"));
+				BufferedImage imagemDefault = ImageIO.read(getClass().getResource("/images/livro-modelo.png"));
 				if (imagemDefault != null) {
 					ImageIcon icon = new ImageIcon(imagemDefault);
 					lblNewLabelImagemLivro.setIcon(icon);

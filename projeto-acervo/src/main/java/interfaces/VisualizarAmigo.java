@@ -268,4 +268,5 @@ public class VisualizarAmigo extends JFrame {
 	private void atualizarListaAmigos() {
 		listaAmigos.setListData(getAmigos());
 	}
+
 }

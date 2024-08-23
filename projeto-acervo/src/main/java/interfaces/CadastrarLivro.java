@@ -48,6 +48,9 @@ public class CadastrarLivro extends JFrame {
 		});
 	}
 
+
+	//O método CadastrarLivro é o construtor da classe CadastrarLivro,
+	// que é responsável por criar a interface gráfica para o cadastro de um livro.
 	public CadastrarLivro() {
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,6 +83,7 @@ public class CadastrarLivro extends JFrame {
 		gbl_panelCadastro.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panelCadastro.setLayout(gbl_panelCadastro);
 
+		// Add the title label
 		JLabel lblTitle = new JLabel("CADASTRAR LIVRO");
 		lblTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 25));
@@ -90,6 +94,7 @@ public class CadastrarLivro extends JFrame {
 		gbc_lblTitle.gridy = 0;
 		panelCadastro.add(lblTitle, gbc_lblTitle);
 
+		// Add the back button
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -105,6 +110,7 @@ public class CadastrarLivro extends JFrame {
 		gbc_btnVoltar.gridy = 0;
 		panelCadastro.add(btnVoltar, gbc_btnVoltar);
 
+		// Add the ISBN label
 		JLabel lblISBN = new JLabel("* ISBN:");
 		lblISBN.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblISBN.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -115,8 +121,9 @@ public class CadastrarLivro extends JFrame {
 		gbc_lblISBN.gridy = 1;
 		panelCadastro.add(lblISBN, gbc_lblISBN);
 
+		// Add the ISBN text field
 		final JFormattedTextField txtIsbn = new JFormattedTextField();
-		txtIsbn.setToolTipText("");
+		txtIsbn.setToolTipText("Código de identificação do livro");
 		txtIsbn.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_txtIsbn = new GridBagConstraints();
 		gbc_txtIsbn.insets = new Insets(0, 0, 10, 10);
@@ -125,6 +132,7 @@ public class CadastrarLivro extends JFrame {
 		gbc_txtIsbn.gridy = 1;
 		panelCadastro.add(txtIsbn, gbc_txtIsbn);
 
+		// Add the "Cadastrar por ISBN" button
 		JButton btnCadastrarPorIsbn = new JButton("Cadastrar por ISBN");
 		btnCadastrarPorIsbn.setAlignmentX(Component.CENTER_ALIGNMENT);
 		btnCadastrarPorIsbn.addActionListener(new ActionListener() {
@@ -142,6 +150,7 @@ public class CadastrarLivro extends JFrame {
 			}
 		});
 
+		// Add the "Exemplares" label and text field
 		JLabel lblNewLabel = new JLabel("* Exemplares:");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
@@ -151,6 +160,7 @@ public class CadastrarLivro extends JFrame {
 		panelCadastro.add(lblNewLabel, gbc_lblNewLabel);
 
 		txtExemplares = new JTextField();
+		txtExemplares.setToolTipText("Digite a Quantidade de Livros");
 		txtExemplares.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_textField = new GridBagConstraints();
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;

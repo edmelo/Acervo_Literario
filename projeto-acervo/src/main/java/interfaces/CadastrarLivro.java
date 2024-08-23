@@ -170,6 +170,7 @@ public class CadastrarLivro extends JFrame {
 		panelCadastro.add(txtExemplares, gbc_textField);
 		txtExemplares.setColumns(10);
 
+		// Add the "Cadastrar por ISBN" button
 		btnCadastrarPorIsbn.setFont(new Font("Tahoma", Font.BOLD, 13));
 		GridBagConstraints gbc_btnCadastrarPorIsbn = new GridBagConstraints();
 		gbc_btnCadastrarPorIsbn.gridwidth = 4;
@@ -177,7 +178,8 @@ public class CadastrarLivro extends JFrame {
 		gbc_btnCadastrarPorIsbn.gridx = 0;
 		gbc_btnCadastrarPorIsbn.gridy = 2;
 		panelCadastro.add(btnCadastrarPorIsbn, gbc_btnCadastrarPorIsbn);
-		
+
+		// Add the "Titulo" label and text field
 		JLabel lblTitulo = new JLabel("* Titulo:");
 		lblTitulo.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -199,6 +201,7 @@ public class CadastrarLivro extends JFrame {
 		panelCadastro.add(txtTitulo, gbc_txtTitulo);
 		txtTitulo.setColumns(10);
 
+		// Add the "Autor" label and text field
 		JLabel lblAutor = new JLabel("*  Autor:");
 		lblAutor.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblAutor.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -220,6 +223,7 @@ public class CadastrarLivro extends JFrame {
 		panelCadastro.add(txtAutor, gbc_txtAutor);
 		txtAutor.setColumns(10);
 
+		// Add the "Editora" label and text field
 		JLabel lblEditora = new JLabel("Editora:");
 		lblEditora.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblEditora.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -241,6 +245,7 @@ public class CadastrarLivro extends JFrame {
 		panelCadastro.add(txtEditora, gbc_txtEditora);
 		txtEditora.setColumns(10);
 
+		// Add the "Data de publicação" label and text field
 		JLabel lbldata = new JLabel("Data de publicação:");
 		lbldata.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lbldata.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -261,26 +266,27 @@ public class CadastrarLivro extends JFrame {
 		gbc_formattedtxtDataPublicacao_1.gridy = 6;
 		panelCadastro.add(formattedtxtDataPublicacao_1, gbc_formattedtxtDataPublicacao_1);
 
-		JLabel lblImagem = new JLabel("Imagem:");
-		lblImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
-		lblImagem.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		GridBagConstraints gbc_lblImagem = new GridBagConstraints();
-		gbc_lblImagem.anchor = GridBagConstraints.EAST;
-		gbc_lblImagem.insets = new Insets(0, 50, 10, 5);
-		gbc_lblImagem.gridx = 0;
-		gbc_lblImagem.gridy = 7;
-		panelCadastro.add(lblImagem, gbc_lblImagem);
-
-		txtImagem = new JTextField();
-		txtImagem.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		GridBagConstraints gbc_txtImagem = new GridBagConstraints();
-		gbc_txtImagem.gridwidth = 3;
-		gbc_txtImagem.insets = new Insets(0, 0, 10, 50);
-		gbc_txtImagem.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtImagem.gridx = 1;
-		gbc_txtImagem.gridy = 7;
-		panelCadastro.add(txtImagem, gbc_txtImagem);
-		txtImagem.setColumns(10);
+//		// Add the "Imagem" label and text field
+//		JLabel lblImagem = new JLabel("Imagem:");
+//		lblImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
+//		lblImagem.setFont(new Font("Tahoma", Font.PLAIN, 13));
+//		GridBagConstraints gbc_lblImagem = new GridBagConstraints();
+//		gbc_lblImagem.anchor = GridBagConstraints.EAST;
+//		gbc_lblImagem.insets = new Insets(0, 50, 10, 5);
+//		gbc_lblImagem.gridx = 0;
+//		gbc_lblImagem.gridy = 7;
+//		panelCadastro.add(lblImagem, gbc_lblImagem);
+//
+//		txtImagem = new JTextField();
+//		txtImagem.setFont(new Font("Tahoma", Font.PLAIN, 13));
+//		GridBagConstraints gbc_txtImagem = new GridBagConstraints();
+//		gbc_txtImagem.gridwidth = 3;
+//		gbc_txtImagem.insets = new Insets(0, 0, 10, 50);
+//		gbc_txtImagem.fill = GridBagConstraints.HORIZONTAL;
+//		gbc_txtImagem.gridx = 1;
+//		gbc_txtImagem.gridy = 7;
+//		panelCadastro.add(txtImagem, gbc_txtImagem);
+//		txtImagem.setColumns(10);
 
 		JLabel lblDescricao = new JLabel("Descrição:");
 		lblDescricao.setAlignmentX(Component.CENTER_ALIGNMENT);

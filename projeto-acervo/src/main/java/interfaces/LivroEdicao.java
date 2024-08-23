@@ -27,6 +27,8 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 
+// está tela é acessada quando cadastrar um livro ou clicar em um livro na lista de livros
+
 public class LivroEdicao extends JFrame {
 
 	private static final long serialVersionUID = 1L;

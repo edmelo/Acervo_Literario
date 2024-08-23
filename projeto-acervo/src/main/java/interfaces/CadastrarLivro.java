@@ -288,6 +288,7 @@ public class CadastrarLivro extends JFrame {
 //		panelCadastro.add(txtImagem, gbc_txtImagem);
 //		txtImagem.setColumns(10);
 
+		// Add the "Descrição" label and text field
 		JLabel lblDescricao = new JLabel("Descrição:");
 		lblDescricao.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblDescricao.setFont(new Font("Tahoma", Font.PLAIN, 13));

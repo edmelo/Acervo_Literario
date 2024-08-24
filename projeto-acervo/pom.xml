@@ -8,28 +8,28 @@
 	<build>
 		<plugins>
 			<!-- Plugin para criar o JAR -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.2.0</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>interfaces.TelaInicial</mainClass> <!-- Classe principal -->
+            <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>interfaces.TelaInicial</mainClass> <!-- Classe principal -->
 						</manifest>
 					</archive>
 				</configuration>
 			</plugin>
 
 			<!-- Plugin para criar o JAR com dependências -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>3.3.0</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>interfaces.TelaInicial</mainClass> <!-- Classe principal -->
+        <!-- <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>interfaces.TelaInicial</mainClass> <!-- Classe principal -->
 						</manifest>
 					</archive>
 					<descriptorRefs>
@@ -45,7 +45,8 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
+
 		</plugins>
 	</build>
 

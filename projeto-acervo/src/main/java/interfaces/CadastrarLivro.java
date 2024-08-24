@@ -142,6 +142,7 @@ public class CadastrarLivro extends JFrame {
 				LivroControlador controlador = new LivroControlador();
 				try {
 					controlador.cadastrarLivroPorISBN(ISBN, exemplares);
+					JOptionPane.showMessageDialog(null, "O livro foi cadastrado com sucesso.", "Success", JOptionPane.INFORMATION_MESSAGE);
 				} catch (ExcecaoControlador ex) {
 					JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 				} catch (Exception exc) {
@@ -149,6 +150,23 @@ public class CadastrarLivro extends JFrame {
 				}
 			}
 		});
+
+//		JButton btnCadastrarPorIsbn = new JButton("Cadastrar por ISBN");
+//		btnCadastrarPorIsbn.setAlignmentX(Component.CENTER_ALIGNMENT);
+//		btnCadastrarPorIsbn.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				String ISBN = txtIsbn.getText();
+//				String exemplares = txtExemplares.getText();
+//				LivroControlador controlador = new LivroControlador();
+//				try {
+//					controlador.cadastrarLivroPorISBN(ISBN, exemplares);
+//				} catch (ExcecaoControlador ex) {
+//					JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+//				} catch (Exception exc) {
+//					JOptionPane.showMessageDialog(null, "Algum erro inesperado aconteceu.", "Error", JOptionPane.ERROR_MESSAGE);
+//				}
+//			}
+//		});
 
 		// Add the "Exemplares" label and text field
 		JLabel lblNewLabel = new JLabel("* Exemplares:");
@@ -309,6 +327,7 @@ public class CadastrarLivro extends JFrame {
 		panelCadastro.add(txtDescricao, gbc_txtDescricao);
 		txtDescricao.setColumns(10);
 
+		// Add the "Cadastrar" button
 		JButton btnCadastrar = new JButton("CADASTRAR");
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -284,27 +284,27 @@ public class CadastrarLivro extends JFrame {
 		gbc_formattedtxtDataPublicacao_1.gridy = 6;
 		panelCadastro.add(formattedtxtDataPublicacao_1, gbc_formattedtxtDataPublicacao_1);
 
-//		// Add the "Imagem" label and text field
-//		JLabel lblImagem = new JLabel("Imagem:");
-//		lblImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
-//		lblImagem.setFont(new Font("Tahoma", Font.PLAIN, 13));
-//		GridBagConstraints gbc_lblImagem = new GridBagConstraints();
-//		gbc_lblImagem.anchor = GridBagConstraints.EAST;
-//		gbc_lblImagem.insets = new Insets(0, 50, 10, 5);
-//		gbc_lblImagem.gridx = 0;
-//		gbc_lblImagem.gridy = 7;
-//		panelCadastro.add(lblImagem, gbc_lblImagem);
-//
-//		txtImagem = new JTextField();
-//		txtImagem.setFont(new Font("Tahoma", Font.PLAIN, 13));
-//		GridBagConstraints gbc_txtImagem = new GridBagConstraints();
-//		gbc_txtImagem.gridwidth = 3;
-//		gbc_txtImagem.insets = new Insets(0, 0, 10, 50);
-//		gbc_txtImagem.fill = GridBagConstraints.HORIZONTAL;
-//		gbc_txtImagem.gridx = 1;
-//		gbc_txtImagem.gridy = 7;
-//		panelCadastro.add(txtImagem, gbc_txtImagem);
-//		txtImagem.setColumns(10);
+		// Add the "Imagem" label and text field
+		JLabel lblImagem = new JLabel("Imagem Link:");
+		lblImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
+		lblImagem.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		GridBagConstraints gbc_lblImagem = new GridBagConstraints();
+		gbc_lblImagem.anchor = GridBagConstraints.EAST;
+		gbc_lblImagem.insets = new Insets(0, 50, 10, 5);
+		gbc_lblImagem.gridx = 0;
+		gbc_lblImagem.gridy = 7;
+		panelCadastro.add(lblImagem, gbc_lblImagem);
+
+		txtImagem = new JTextField();
+		txtImagem.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		GridBagConstraints gbc_txtImagem = new GridBagConstraints();
+		gbc_txtImagem.gridwidth = 3;
+		gbc_txtImagem.insets = new Insets(0, 0, 10, 50);
+		gbc_txtImagem.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtImagem.gridx = 1;
+		gbc_txtImagem.gridy = 7;
+		panelCadastro.add(txtImagem, gbc_txtImagem);
+		txtImagem.setColumns(10);
 
 		// Add the "Descrição" label and text field
 		JLabel lblDescricao = new JLabel("Descrição:");

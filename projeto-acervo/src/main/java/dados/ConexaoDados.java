@@ -25,7 +25,7 @@ public class ConexaoDados {
         } 
 
         try {
-        	con = DriverManager.getConnection(url + "sib", usuario, senha);
+        	con = DriverManager.getConnection(url + "acervo", usuario, senha);
         }
         catch (SQLException e) {
             throw new ExcecaoDados("Erro ao conectar com o banco de dados.", e);

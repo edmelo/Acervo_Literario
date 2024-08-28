@@ -4,11 +4,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import controladores.EmprestimoControlador;
 import controladores.ExcecaoControlador;
 import controladores.LivroControlador;
+import controladores.LeitorControlador;
 import modelos.LivroModelo;
+import modelos.LeitorModelo;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,6 +18,7 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JTextField;
 import javax.swing.DefaultListModel;
@@ -35,7 +37,9 @@ public class EmprestarLivro extends JFrame {
 	private JTextField txtIsbn;
 	private JTextField txtCpf;
 	private final LivroControlador livroControlador = new LivroControlador();
+	private final LeitorControlador leitorControlador = new LeitorControlador();
 	private final JList listaLivros = new JList();
+	private JList<String> listaAmigos;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -90,7 +94,7 @@ public class EmprestarLivro extends JFrame {
 		contentPane.add(scrollPane, gbc_scrollPane);
 
 		JList<LivroModelo> listaLivros = new JList<>(modeloJlist);
-		listaLivros.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		listaLivros.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		scrollPane.setViewportView(listaLivros);
 		listaLivros.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
@@ -110,7 +114,7 @@ public class EmprestarLivro extends JFrame {
 		gbl_panel.columnWidths = new int[]{162, 393, 0, 0};
 		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0};
 		gbl_panel.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0};
 		panel.setLayout(gbl_panel);
 
 		JLabel lblNewLabelEmprestimo = new JLabel("EMPRÉSTIMO");
@@ -130,7 +134,7 @@ public class EmprestarLivro extends JFrame {
 				new MenuPrincipal().setVisible(true);
 			}
 		});
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(30, 0, 60, 5);
 		gbc_btnNewButton.gridx = 2;
@@ -138,7 +142,7 @@ public class EmprestarLivro extends JFrame {
 		panel.add(btnNewButton, gbc_btnNewButton);
 
 		JLabel lblNewLabelISBN = new JLabel("ISBN DO LIVRO:");
-		lblNewLabelISBN.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabelISBN.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabelISBN.setAlignmentX(0.5f);
 		GridBagConstraints gbc_lblNewLabelISBN = new GridBagConstraints();
 		gbc_lblNewLabelISBN.anchor = GridBagConstraints.EAST;
@@ -148,7 +152,7 @@ public class EmprestarLivro extends JFrame {
 		panel.add(lblNewLabelISBN, gbc_lblNewLabelISBN);
 
 		txtIsbn = new JTextField();
-		txtIsbn.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtIsbn.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtIsbn.setColumns(10);
 		GridBagConstraints gbc_txtIsbn = new GridBagConstraints();
 		gbc_txtIsbn.fill = GridBagConstraints.HORIZONTAL;
@@ -158,20 +162,20 @@ public class EmprestarLivro extends JFrame {
 		panel.add(txtIsbn, gbc_txtIsbn);
 
 		JLabel lblNewLabelCPF = new JLabel("CPF DO LEITOR:");
-		lblNewLabelCPF.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabelCPF.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabelCPF.setAlignmentX(0.5f);
 		GridBagConstraints gbc_lblNewLabelCPF = new GridBagConstraints();
 		gbc_lblNewLabelCPF.anchor = GridBagConstraints.EAST;
-		gbc_lblNewLabelCPF.insets = new Insets(0, 50, 100, 5);
+		gbc_lblNewLabelCPF.insets = new Insets(0, 50, 10, 5);
 		gbc_lblNewLabelCPF.gridx = 0;
 		gbc_lblNewLabelCPF.gridy = 2;
 		panel.add(lblNewLabelCPF, gbc_lblNewLabelCPF);
 
 		txtCpf = new JTextField();
-		txtCpf.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtCpf.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_txtCpf = new GridBagConstraints();
 		gbc_txtCpf.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtCpf.insets = new Insets(0, 5, 100, 50);
+		gbc_txtCpf.insets = new Insets(0, 5, 10, 50);
 		gbc_txtCpf.gridx = 1;
 		gbc_txtCpf.gridy = 2;
 		panel.add(txtCpf, gbc_txtCpf);
@@ -194,7 +198,7 @@ public class EmprestarLivro extends JFrame {
 				}
 			}
 		});
-		btnRealizarEmprstimo.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnRealizarEmprstimo.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnRealizarEmprstimo.setAlignmentX(0.5f);
 		GridBagConstraints gbc_btnRealizarEmprstimo = new GridBagConstraints();
 		gbc_btnRealizarEmprstimo.gridwidth = 2;
@@ -202,5 +206,34 @@ public class EmprestarLivro extends JFrame {
 		gbc_btnRealizarEmprstimo.gridx = 0;
 		gbc_btnRealizarEmprstimo.gridy = 3;
 		panel.add(btnRealizarEmprstimo, gbc_btnRealizarEmprstimo);
+
+		// Add JList to display friends
+		listaAmigos = new JList<>();
+		JScrollPane scrollPaneAmigos = new JScrollPane(listaAmigos);
+		GridBagConstraints gbc_scrollPaneAmigos = new GridBagConstraints();
+		gbc_scrollPaneAmigos.gridwidth = 3;
+		gbc_scrollPaneAmigos.insets = new Insets(20, 50, 60, 5);
+		gbc_scrollPaneAmigos.fill = GridBagConstraints.BOTH;
+		gbc_scrollPaneAmigos.gridx = 0;
+		gbc_scrollPaneAmigos.gridy = 4;
+		panel.add(scrollPaneAmigos, gbc_scrollPaneAmigos);
+
+		// Update the list of friends
+		atualizarListaAmigos();
+	}
+
+	// Method to update the list of friends
+	public void atualizarListaAmigos() {
+		try {
+			List<LeitorModelo> amigos = leitorControlador.buscarTodosLeitores();
+			List<String> lista = new ArrayList<>();
+			for (LeitorModelo amigo : amigos) {
+				lista.add(amigo.getNome() + " - " + amigo.getCpf());
+			}
+			Collections.sort(lista);
+			listaAmigos.setListData(lista.toArray(new String[0]));
+		} catch (ExcecaoControlador e) {
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
 	}
 }

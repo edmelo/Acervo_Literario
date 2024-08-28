@@ -127,7 +127,7 @@ public class VisualizarAmigo extends JFrame {
 				}
 			}
 		});
-		btnBuscarLeitor.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnBuscarLeitor.setFont(new Font("Tahoma", Font.BOLD, 15));
 		GridBagConstraints gbc_btnBuscarLeitor = new GridBagConstraints();
 		gbc_btnBuscarLeitor.anchor = GridBagConstraints.EAST;
 		gbc_btnBuscarLeitor.insets = new Insets(0, 0, 10, 5);
@@ -136,7 +136,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(btnBuscarLeitor, gbc_btnBuscarLeitor);
 
 		JLabel lblNome = new JLabel("Nome:");
-		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblNome = new GridBagConstraints();
 		gbc_lblNome.anchor = GridBagConstraints.EAST;
 		gbc_lblNome.insets = new Insets(0, 0, 5, 5);
@@ -145,7 +145,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(lblNome, gbc_lblNome);
 
 		txtNome = new JTextField();
-		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtNome.setEditable(false);
 		txtNome.setColumns(10);
 		GridBagConstraints gbc_txtNome = new GridBagConstraints();
@@ -156,7 +156,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(txtNome, gbc_txtNome);
 
 		JLabel lblEmail = new JLabel("E-mail:");
-		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblEmail = new GridBagConstraints();
 		gbc_lblEmail.anchor = GridBagConstraints.EAST;
 		gbc_lblEmail.insets = new Insets(0, 0, 5, 5);
@@ -165,7 +165,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(lblEmail, gbc_lblEmail);
 
 		txtEmail = new JTextField();
-		txtEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtEmail.setEditable(false);
 		txtEmail.setColumns(10);
 		GridBagConstraints gbc_txtEmail = new GridBagConstraints();
@@ -176,7 +176,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(txtEmail, gbc_txtEmail);
 
 		JLabel lblEmprestimos = new JLabel("Empréstimos ativos:");
-		lblEmprestimos.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblEmprestimos.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblEmprestimos = new GridBagConstraints();
 		gbc_lblEmprestimos.anchor = GridBagConstraints.EAST;
 		gbc_lblEmprestimos.insets = new Insets(0, 0, 5, 5);
@@ -185,7 +185,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(lblEmprestimos, gbc_lblEmprestimos);
 
 		txtEmprestimosAtivos = new JTextField();
-		txtEmprestimosAtivos.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtEmprestimosAtivos.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtEmprestimosAtivos.setEditable(false);
 		txtEmprestimosAtivos.setColumns(10);
 		GridBagConstraints gbc_txtEmprestimosAtivos = new GridBagConstraints();
@@ -195,7 +195,7 @@ public class VisualizarAmigo extends JFrame {
 		gbc_txtEmprestimosAtivos.gridy = 4;
 		contentPane.add(txtEmprestimosAtivos, gbc_txtEmprestimosAtivos);
 
-		btnEditarDados.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnEditarDados.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnEditarDados.setEnabled(true);
 		btnEditarDados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -211,7 +211,7 @@ public class VisualizarAmigo extends JFrame {
 		gbc_btnEditarDados.gridy = 6;
 		contentPane.add(btnEditarDados, gbc_btnEditarDados);
 
-		btnAtualizarDados.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnAtualizarDados.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnAtualizarDados.setEnabled(true);
 		btnAtualizarDados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

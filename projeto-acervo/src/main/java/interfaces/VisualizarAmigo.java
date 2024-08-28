@@ -1,4 +1,4 @@
-// Classe VisualizarAmigo
+// VisualizarAmigo.java
 package interfaces;
 
 import java.awt.EventQueue;
@@ -23,6 +23,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JList;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class VisualizarAmigo extends JFrame {
 
@@ -222,7 +223,6 @@ public class VisualizarAmigo extends JFrame {
 					controlador.atualizarNomeLeitor(leitor, nome);
 					controlador.atualizarEmailLeitor(leitor, email);
 					JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso!");
-					atualizarListaAmigos(); // Atualizar a lista de amigos
 				} catch (ExcecaoControlador e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage());
 				}
@@ -235,37 +235,34 @@ public class VisualizarAmigo extends JFrame {
 		gbc_btnAtualizarDados.gridy = 6;
 		contentPane.add(btnAtualizarDados, gbc_btnAtualizarDados);
 
-		// Adicionar lista de amigos
-		listaAmigos = new JList<>(getAmigos());
+		// Add JList to display friends
+		listaAmigos = new JList<>();
 		JScrollPane scrollPane = new JScrollPane(listaAmigos);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.gridwidth = 3;
-		gbc_scrollPane.insets = new Insets(10, 50, 10, 50);
+		gbc_scrollPane.insets = new Insets(20, 50, 60, 5);
 		gbc_scrollPane.fill = GridBagConstraints.BOTH;
 		gbc_scrollPane.gridx = 0;
-		gbc_scrollPane.gridy = 5;
+		gbc_scrollPane.gridy = 7;
 		contentPane.add(scrollPane, gbc_scrollPane);
+
+		// Update the list of friends
+		atualizarListaAmigos();
 	}
 
-	// Método para obter a lista de amigos
-	private String[] getAmigos() {
-		List<LeitorModelo> amigos = new ArrayList<>();
+	// Method to update the list of friends
+	public void atualizarListaAmigos() {
 		try {
-			amigos = controlador.buscarTodosLeitores();
+			List<LeitorModelo> amigos = controlador.buscarTodosLeitores();
+			List<String> lista = new ArrayList<>();
+			for (LeitorModelo amigo : amigos) {
+				lista.add(amigo.getNome() + " - " + amigo.getCpf());
+			}
+			Collections.sort(lista);
+			listaAmigos.setListData(lista.toArray(new String[0]));
 		} catch (ExcecaoControlador e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
-		String[] lista = new String[amigos.size()];
-		for (int i = 0; i < amigos.size(); i++) {
-			LeitorModelo amigo = amigos.get(i);
-			lista[i] = amigo.getNome() + " - " + amigo.getCpf();
-		}
-		return lista;
-	}
-
-	// Método para atualizar a lista de amigos
-	private void atualizarListaAmigos() {
-		listaAmigos.setListData(getAmigos());
 	}
 
 }

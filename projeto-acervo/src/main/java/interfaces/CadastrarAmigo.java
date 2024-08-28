@@ -18,6 +18,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import controladores.ExcecaoControlador;
+import controladores.LeitorControlador;
+
 public class CadastrarAmigo extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -174,6 +181,9 @@ public class CadastrarAmigo extends JFrame {
 				try {
 					controlador.cadastrarLeitor(nome, cpf, email);
 					JOptionPane.showMessageDialog(null, "O leitor foi cadastrado com sucesso.", "Success", JOptionPane.INFORMATION_MESSAGE);
+					//Update the list of friends in VisualizarAmigo
+					VisualizarAmigo visualizarAmigo = new VisualizarAmigo();
+					visualizarAmigo.atualizarListaAmigos();
 				} catch (ExcecaoControlador e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 				} catch (Exception e2) {

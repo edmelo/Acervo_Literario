@@ -9,11 +9,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.border.EmptyBorder;
-
 import controladores.ExcecaoControlador;
 import controladores.LivroControlador;
 import modelos.LivroModelo;
-
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Font;

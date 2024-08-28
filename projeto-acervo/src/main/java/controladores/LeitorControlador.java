@@ -144,16 +144,16 @@ public class LeitorControlador {
 		}
 	}
 
-	// Method to retrieve all friends in alphabetical order
-	public List<LeitorModelo> buscarTodosLeitores() throws ExcecaoControlador {
-		// Retrieve the list of all friends from the database or data source
-		List<LeitorModelo> leitores = new ArrayList<>();
-		// Add code to fetch the list from the database
-		// For now, let's assume we have a list of LeitorModelo objects
-		// Sort the list alphabetically by name
-		Collections.sort(leitores, (a, b) -> a.getNome().compareToIgnoreCase(b.getNome()));
-		return leitores;
-	}
+//	// Method to retrieve all friends in alphabetical order
+//	public List<LeitorModelo> buscarTodosLeitores() throws ExcecaoControlador {
+//		// Retrieve the list of all friends from the database or data source
+//		List<LeitorModelo> leitores = new ArrayList<>();
+//		// Add code to fetch the list from the database
+//		// For now, let's assume we have a list of LeitorModelo objects
+//		// Sort the list alphabetically by name
+//		Collections.sort(leitores, (a, b) -> a.getNome().compareToIgnoreCase(b.getNome()));
+//		return leitores;
+//	}
 
 //	public static List<LeitorModelo> buscarTodosLeitores() throws ExcecaoControlador {
 //		try {
@@ -162,6 +162,18 @@ public class LeitorControlador {
 //			throw new ExcecaoControlador(e.getMessage(), e);
 //		}
 //	}
+
+	public List<LeitorModelo> buscarTodosLeitores() throws ExcecaoControlador {
+		// Implementação para buscar todos os leitores do banco de dados
+		try {
+			return dados.buscarTodosLeitores();
+		} catch (ExcecaoDados e) {
+			throw new ExcecaoControlador(e.getMessage(), e);
+		}
+		// Certifique-se de que a consulta ao banco de dados está correta e retornando os dados esperados
+		// Certifique-se de que a lista de leitores está sendo retornada em ordem alfabética
+
+	}
 
 	public InterfaceLeitorDados getDados() {
 		return dados;

@@ -34,7 +34,7 @@ public class VisualizarAmigo extends JFrame {
 	private JTextField txtEmail;
 	private JTextField txtEmprestimosAtivos;
 	private JList<String> listaAmigos;
-	private LeitorControlador controlador; // Declarar a variável controlador
+	private LeitorControlador controlador;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -50,7 +50,7 @@ public class VisualizarAmigo extends JFrame {
 	}
 
 	public VisualizarAmigo() {
-		controlador = new LeitorControlador(); // Inicializar a variável controlador
+		controlador = new LeitorControlador();
 		final JButton btnEditarDados = new JButton("Editar dados");
 		final JButton btnAtualizarDados = new JButton("Atualizar dados");
 
@@ -264,5 +264,4 @@ public class VisualizarAmigo extends JFrame {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
-
 }

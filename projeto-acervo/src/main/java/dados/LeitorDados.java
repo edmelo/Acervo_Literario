@@ -264,43 +264,37 @@ public class LeitorDados implements InterfaceLeitorDados {
             }
 		}
 	}
-	
+
 	public List<LeitorModelo> buscarTodosLeitores() throws ExcecaoDados {
+		List<LeitorModelo> listaLeitores = new ArrayList<>();
 		try {
-    		con = new ConexaoDados().getConnection();
-    		
-    		String buscarLeitores = "SELECT * FROM leitor";
-    		stmt = con.prepareStatement(buscarLeitores);
-        	result = stmt.executeQuery();
-        	
-        	List<LeitorModelo> listaLeitores = new ArrayList<>();
-        	
-        	if(result.next()) {
-        		LeitorModelo leitor = new LeitorModelo();
-        		leitor.setNome(result.getString("nome_leitor"));
+			con = new ConexaoDados().getConnection();
+			String buscarLeitores = "SELECT * FROM leitor";
+			stmt = con.prepareStatement(buscarLeitores);
+			result = stmt.executeQuery();
+
+			while (result.next()) {
+				LeitorModelo leitor = new LeitorModelo();
+				leitor.setNome(result.getString("nome_leitor"));
 				leitor.setCpf(result.getString("cpf_leitor"));
 				leitor.setEmail(result.getString("email_leitor"));
 				leitor.setEmprestimo(result.getInt("emprestimo_leitor"));
-            	
-            	listaLeitores.add(leitor);
-        	}
-        	
-        	return listaLeitores;
-        	
-    	} catch (Exception e) {
-        	throw new ExcecaoDados("Leitor não encontrado");
-    	} finally {
-            try {
-                if (stmt != null) {stmt.close();}
-            } catch (SQLException e) {
-                throw new ExcecaoDados("Erro ao fechar o Statement: ");
-            }
-            
-            try {
-                if (con != null) {con.close();}
-            } catch (SQLException e) {
-                throw new ExcecaoDados("Erro ao fechar a conexão: ");                
-            }
+				listaLeitores.add(leitor);
+			}
+		} catch (Exception e) {
+			throw new ExcecaoDados("Erro ao tentar buscar todos os leitores");
+		} finally {
+			try {
+				if (stmt != null) { stmt.close(); }
+			} catch (SQLException e) {
+				throw new ExcecaoDados("Erro ao fechar o Statement: ");
+			}
+			try {
+				if (con != null) { con.close(); }
+			} catch (SQLException e) {
+				throw new ExcecaoDados("Erro ao fechar a conexão: ");
+			}
 		}
+		return listaLeitores;
 	}
 }

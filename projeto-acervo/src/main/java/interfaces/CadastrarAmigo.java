@@ -113,7 +113,7 @@ public class CadastrarAmigo extends JFrame {
 
 		// Add the "Nome" label and text field
 		JLabel lblNome = new JLabel("Nome:");
-		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblNome = new GridBagConstraints();
 		gbc_lblNome.insets = new Insets(0, 50, 10, 5);
 		gbc_lblNome.anchor = GridBagConstraints.EAST;
@@ -122,6 +122,7 @@ public class CadastrarAmigo extends JFrame {
 		panel.add(lblNome, gbc_lblNome);
 
 		txtNome = new JTextField();
+		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_txtNome = new GridBagConstraints();
 		gbc_txtNome.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtNome.insets = new Insets(0, 0, 10, 50);
@@ -132,7 +133,7 @@ public class CadastrarAmigo extends JFrame {
 
 		// Add the "Email" label and text field
 		JLabel lblEmail = new JLabel("E-mail:");
-		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblEmail = new GridBagConstraints();
 		gbc_lblEmail.anchor = GridBagConstraints.EAST;
 		gbc_lblEmail.insets = new Insets(0, 50, 10, 5);
@@ -141,6 +142,7 @@ public class CadastrarAmigo extends JFrame {
 		panel.add(lblEmail, gbc_lblEmail);
 
 		txtEmail = new JTextField();
+		txtEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_txtEmail = new GridBagConstraints();
 		gbc_txtEmail.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtEmail.insets = new Insets(0, 0, 10, 50);
@@ -151,7 +153,7 @@ public class CadastrarAmigo extends JFrame {
 
 		// Add the "CPF" label and text field
 		JLabel lblCPF = new JLabel("CPF:");
-		lblCPF.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblCPF.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblCPF = new GridBagConstraints();
 		gbc_lblCPF.anchor = GridBagConstraints.EAST;
 		gbc_lblCPF.insets = new Insets(0, 50, 10, 5);
@@ -160,6 +162,7 @@ public class CadastrarAmigo extends JFrame {
 		panel.add(lblCPF, gbc_lblCPF);
 
 		txtCpf = new JTextField();
+		txtCpf.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_txtCpf = new GridBagConstraints();
 		gbc_txtCpf.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtCpf.insets = new Insets(0, 0, 10, 50);

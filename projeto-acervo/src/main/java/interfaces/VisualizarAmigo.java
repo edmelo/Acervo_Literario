@@ -21,8 +21,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -238,7 +236,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(btnAtualizarDados, gbc_btnAtualizarDados);
 
 		// Adicionar lista de amigos
-		listaAmigos = new JList<>(getAmigos().toArray(new String[0]));
+		listaAmigos = new JList<>(getAmigos());
 		JScrollPane scrollPane = new JScrollPane(listaAmigos);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.gridwidth = 3;
@@ -250,31 +248,24 @@ public class VisualizarAmigo extends JFrame {
 	}
 
 	// Método para obter a lista de amigos
-	private List<String> getAmigos() {
+	private String[] getAmigos() {
 		List<LeitorModelo> amigos = new ArrayList<>();
 		try {
 			amigos = controlador.buscarTodosLeitores();
 		} catch (ExcecaoControlador e) {
 			e.printStackTrace();
 		}
-		// Ordenar a lista de amigos alfabeticamente pelo nome
-		Collections.sort(amigos, new Comparator<LeitorModelo>() {
-			@Override
-			public int compare(LeitorModelo o1, LeitorModelo o2) {
-				return o1.getNome().compareToIgnoreCase(o2.getNome());
-			}
-		});
-		// Converter a lista de LeitorModelo para uma lista de String
-		List<String> listaAmigos = new ArrayList<>();
-		for (LeitorModelo amigo : amigos) {
-			listaAmigos.add(amigo.getNome() + " - " + amigo.getCpf());
+		String[] lista = new String[amigos.size()];
+		for (int i = 0; i < amigos.size(); i++) {
+			LeitorModelo amigo = amigos.get(i);
+			lista[i] = amigo.getNome() + " - " + amigo.getCpf();
 		}
-		return listaAmigos;
+		return lista;
 	}
 
 	// Método para atualizar a lista de amigos
 	private void atualizarListaAmigos() {
-		List<String> amigos = getAmigos();
-		listaAmigos.setListData(amigos.toArray(new String[0]));
+		listaAmigos.setListData(getAmigos());
 	}
+
 }

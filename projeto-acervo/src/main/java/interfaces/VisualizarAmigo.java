@@ -19,9 +19,10 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import javax.swing.JScrollPane;
 import javax.swing.JList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -86,7 +87,7 @@ public class VisualizarAmigo extends JFrame {
 				new MenuPrincipal().setVisible(true);
 			}
 		});
-		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 15));
 		GridBagConstraints gbc_btnVoltar = new GridBagConstraints();
 		gbc_btnVoltar.anchor = GridBagConstraints.EAST;
 		gbc_btnVoltar.insets = new Insets(30, 0, 60, 5);
@@ -95,7 +96,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(btnVoltar, gbc_btnVoltar);
 
 		JLabel lblCpf = new JLabel("Digite o CPF:");
-		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblCpf = new GridBagConstraints();
 		gbc_lblCpf.anchor = GridBagConstraints.EAST;
 		gbc_lblCpf.insets = new Insets(0, 50, 10, 5);
@@ -104,7 +105,7 @@ public class VisualizarAmigo extends JFrame {
 		contentPane.add(lblCpf, gbc_lblCpf);
 
 		txtCpf = new JTextField();
-		txtCpf.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtCpf.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtCpf.setColumns(10);
 		GridBagConstraints gbc_textCpf = new GridBagConstraints();
 		gbc_textCpf.fill = GridBagConstraints.HORIZONTAL;
@@ -232,12 +233,12 @@ public class VisualizarAmigo extends JFrame {
 		GridBagConstraints gbc_btnAtualizarDados = new GridBagConstraints();
 		gbc_btnAtualizarDados.insets = new Insets(0, 0, 10, 5);
 		gbc_btnAtualizarDados.anchor = GridBagConstraints.EAST;
-		gbc_btnAtualizarDados.gridx = 2;
+		gbc_btnAtualizarDados.gridx = 1;
 		gbc_btnAtualizarDados.gridy = 6;
 		contentPane.add(btnAtualizarDados, gbc_btnAtualizarDados);
 
 		// Adicionar lista de amigos
-		listaAmigos = new JList<>(getAmigos());
+		listaAmigos = new JList<>(getAmigos().toArray(new String[0]));
 		JScrollPane scrollPane = new JScrollPane(listaAmigos);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.gridwidth = 3;
@@ -249,24 +250,31 @@ public class VisualizarAmigo extends JFrame {
 	}
 
 	// Método para obter a lista de amigos
-	private String[] getAmigos() {
+	private List<String> getAmigos() {
 		List<LeitorModelo> amigos = new ArrayList<>();
 		try {
 			amigos = controlador.buscarTodosLeitores();
 		} catch (ExcecaoControlador e) {
 			e.printStackTrace();
 		}
-		String[] lista = new String[amigos.size()];
-		for (int i = 0; i < amigos.size(); i++) {
-			LeitorModelo amigo = amigos.get(i);
-			lista[i] = amigo.getNome() + " - " + amigo.getCpf();
+		// Ordenar a lista de amigos alfabeticamente pelo nome
+		Collections.sort(amigos, new Comparator<LeitorModelo>() {
+			@Override
+			public int compare(LeitorModelo o1, LeitorModelo o2) {
+				return o1.getNome().compareToIgnoreCase(o2.getNome());
+			}
+		});
+		// Converter a lista de LeitorModelo para uma lista de String
+		List<String> listaAmigos = new ArrayList<>();
+		for (LeitorModelo amigo : amigos) {
+			listaAmigos.add(amigo.getNome() + " - " + amigo.getCpf());
 		}
-		return lista;
+		return listaAmigos;
 	}
 
 	// Método para atualizar a lista de amigos
 	private void atualizarListaAmigos() {
-		listaAmigos.setListData(getAmigos());
+		List<String> amigos = getAmigos();
+		listaAmigos.setListData(amigos.toArray(new String[0]));
 	}
-
 }

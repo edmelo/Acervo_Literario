@@ -1,22 +1,23 @@
 package interfaces;
 
 import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import controladores.ExcecaoControlador;
 import controladores.LeitorControlador;
-import javax.swing.JButton;
+import modelos.LeitorModelo;
+
 import java.awt.Font;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class CadastrarAmigo extends JFrame {
 
@@ -25,6 +26,8 @@ public class CadastrarAmigo extends JFrame {
 	private JTextField txtNome;
 	private JTextField txtEmail;
 	private JTextField txtCpf;
+	private LeitorControlador controlador;
+	private JList<String> listaAmigos; // Declarar a variável listaAmigos
 
 	// Main method to launch the application
 	public static void main(String[] args) {
@@ -42,6 +45,8 @@ public class CadastrarAmigo extends JFrame {
 
 	// Constructor to set up the frame
 	public CadastrarAmigo() {
+		controlador = new LeitorControlador(); // Inicializar a variável controlador
+
 		// Set default close operation
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// Set the frame to fill the entire screen
@@ -169,13 +174,10 @@ public class CadastrarAmigo extends JFrame {
 				String email = txtEmail.getText();
 				String cpf = txtCpf.getText();
 
-				LeitorControlador controlador = new LeitorControlador();
+				LeitorModelo novoAmigo = new LeitorModelo(nome, cpf, email);
 
 				try {
-					controlador.cadastrarLeitor(nome, cpf, email);
-					JOptionPane.showMessageDialog(null, "O leitor foi cadastrado com sucesso.", "Success", JOptionPane.INFORMATION_MESSAGE);
-				} catch (ExcecaoControlador e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+					cadastrarNovoAmigo(nome, cpf, email); // Chamar o método para cadastrar e atualizar a lista
 				} catch (Exception e2) {
 					JOptionPane.showMessageDialog(null, "Algum erro inesperado aconteceu.", "Error", JOptionPane.ERROR_MESSAGE);
 				}
@@ -188,5 +190,46 @@ public class CadastrarAmigo extends JFrame {
 		gbc_btnCadastrar.gridx = 0;
 		gbc_btnCadastrar.gridy = 5;
 		panel.add(btnCadastrar, gbc_btnCadastrar);
+	}
+
+
+// Método para cadastrar um novo amigo e atualizar a lista
+	private void cadastrarNovoAmigo(String nome, String cpf, String email) {
+		try {
+			controlador.cadastrarLeitor(nome, cpf, email);
+			JOptionPane.showMessageDialog(null, "Amigo cadastrado com sucesso!");
+			atualizarListaAmigos(); // Atualizar a lista de amigos
+		} catch (ExcecaoControlador e) {
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
+	}
+
+	// Método para obter a lista de amigos
+	private List<LeitorModelo> getAmigos() {
+		List<LeitorModelo> amigos = new ArrayList<>();
+		try {
+			amigos = controlador.buscarTodosLeitores();
+		} catch (ExcecaoControlador e) {
+			e.printStackTrace();
+		}
+		// Ordenar a lista de amigos alfabeticamente pelo nome
+		Collections.sort(amigos, new Comparator<LeitorModelo>() {
+			@Override
+			public int compare(LeitorModelo o1, LeitorModelo o2) {
+				return o1.getNome().compareToIgnoreCase(o2.getNome());
+			}
+		});
+		return amigos;
+	}
+
+	// Método para atualizar a lista de amigos
+	private void atualizarListaAmigos() {
+		List<LeitorModelo> amigos = getAmigos();
+		String[] lista = new String[amigos.size()];
+		for (int i = 0; i < amigos.size(); i++) {
+			LeitorModelo amigo = amigos.get(i);
+			lista[i] = amigo.getNome() + " - " + amigo.getCpf();
+		}
+		listaAmigos.setListData(lista);
 	}
 }

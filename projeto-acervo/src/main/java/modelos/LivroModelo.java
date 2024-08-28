@@ -13,10 +13,9 @@ public class LivroModelo {
 	private int disponivel;
 	private int emprestado;
 	private int total = disponivel + emprestado;
-	
-	
+
 	public LivroModelo() {
-		
+
 	}
 	
 	public LivroModelo(String isbn, String titulo, String autor, String editora, String dataPublicacao, String descricao, String img) {

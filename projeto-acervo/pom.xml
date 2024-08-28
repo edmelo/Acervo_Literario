@@ -5,10 +5,10 @@
     <artifactId>projeto-acervo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-	<build>
-		<plugins>
-			<!-- Plugin para criar o JAR -->
-            <!-- <plugin>
+    <build>
+        <plugins>
+            <!-- Plugin para criar o JAR -->
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
@@ -16,39 +16,38 @@
                     <archive>
                         <manifest>
                             <mainClass>interfaces.TelaInicial</mainClass> <!-- Classe principal -->
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
 
-			<!-- Plugin para criar o JAR com dependências -->
-        <!-- <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <version>3.3.0</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <mainClass>interfaces.TelaInicial</mainClass> <!-- Classe principal -->
-						</manifest>
-					</archive>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> -->
-
-		</plugins>
-	</build>
+            <!-- Plugin para criar o JAR com dependências -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>interfaces.TelaInicial</mainClass> <!-- Classe principal -->
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>

@@ -131,7 +131,7 @@ public class ControleAcervo extends JFrame {
 			}
 		});
 		btnNewButton.setForeground(new Color(0, 0, 0));
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 0);
 		gbc_btnNewButton.gridx = 5;
@@ -139,7 +139,7 @@ public class ControleAcervo extends JFrame {
 		panel.add(btnNewButton, gbc_btnNewButton);
 
 		JLabel lblIsbn = new JLabel("ISBN:");
-		lblIsbn.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblIsbn.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblIsbn = new GridBagConstraints();
 		gbc_lblIsbn.anchor = GridBagConstraints.EAST;
 		gbc_lblIsbn.insets = new Insets(0, 0, 5, 5);
@@ -149,7 +149,7 @@ public class ControleAcervo extends JFrame {
 
 		txtIsbn = new JTextField();
 		txtIsbn.setEditable(false);
-		txtIsbn.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtIsbn.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_txtIsbn = new GridBagConstraints();
 		gbc_txtIsbn.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtIsbn.insets = new Insets(0, 0, 5, 5);
@@ -159,7 +159,7 @@ public class ControleAcervo extends JFrame {
 		txtIsbn.setColumns(10);
 
 		JLabel lblTotal = new JLabel("Exemplares cadastrados");
-		lblTotal.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblTotal.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblTotal = new GridBagConstraints();
 		gbc_lblTotal.insets = new Insets(0, 0, 5, 5);
 		gbc_lblTotal.anchor = GridBagConstraints.EAST;
@@ -169,6 +169,7 @@ public class ControleAcervo extends JFrame {
 
 		txtTotalExemplares = new JTextField();
 		txtTotalExemplares.setEditable(false);
+		txtTotalExemplares.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_txtTotalExemplares = new GridBagConstraints();
 		gbc_txtTotalExemplares.insets = new Insets(0, 0, 5, 5);
 		gbc_txtTotalExemplares.fill = GridBagConstraints.HORIZONTAL;
@@ -178,7 +179,7 @@ public class ControleAcervo extends JFrame {
 		txtTotalExemplares.setColumns(10);
 
 		JLabel lblEmprestados = new JLabel("Emprestados.");
-		lblEmprestados.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblEmprestados.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblEmprestados = new GridBagConstraints();
 		gbc_lblEmprestados.anchor = GridBagConstraints.EAST;
 		gbc_lblEmprestados.insets = new Insets(0, 0, 5, 5);
@@ -188,6 +189,7 @@ public class ControleAcervo extends JFrame {
 
 		txtEmprestados = new JTextField();
 		txtEmprestados.setEditable(false);
+		txtEmprestados.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_txtEmprestados = new GridBagConstraints();
 		gbc_txtEmprestados.insets = new Insets(0, 0, 5, 5);
 		gbc_txtEmprestados.fill = GridBagConstraints.HORIZONTAL;
@@ -197,7 +199,7 @@ public class ControleAcervo extends JFrame {
 		txtEmprestados.setColumns(10);
 
 		JLabel lblDisponiveis = new JLabel("Disponíveis p/ empréstimo");
-		lblDisponiveis.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblDisponiveis.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblDisponiveis = new GridBagConstraints();
 		gbc_lblDisponiveis.anchor = GridBagConstraints.EAST;
 		gbc_lblDisponiveis.insets = new Insets(0, 0, 5, 5);
@@ -217,21 +219,19 @@ public class ControleAcervo extends JFrame {
 		txtDisponiveis.setColumns(10);
 
 		JLabel lblQtdExemplares = new JLabel("Quantidade de exemplares:");
-		lblQtdExemplares.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblQtdExemplares.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblQtdExemplares = new GridBagConstraints();
-		gbc_lblQtdExemplares.gridheight = 2;
 		gbc_lblQtdExemplares.anchor = GridBagConstraints.EAST;
-		gbc_lblQtdExemplares.insets = new Insets(0, 0, 20, 5);
+		gbc_lblQtdExemplares.insets = new Insets(0, 0, 5, 5);
 		gbc_lblQtdExemplares.gridx = 0;
 		gbc_lblQtdExemplares.gridy = 6;
 		panel.add(lblQtdExemplares, gbc_lblQtdExemplares);
 
 		txtQtdExemplares = new JTextField();
-		txtQtdExemplares.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtQtdExemplares.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_txtQtdExemplares = new GridBagConstraints();
-		gbc_txtQtdExemplares.gridheight = 2;
+		gbc_txtQtdExemplares.insets = new Insets(0, 0, 5, 5);
 		gbc_txtQtdExemplares.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtQtdExemplares.insets = new Insets(0, 0, 20, 5);
 		gbc_txtQtdExemplares.gridx = 1;
 		gbc_txtQtdExemplares.gridy = 6;
 		panel.add(txtQtdExemplares, gbc_txtQtdExemplares);
@@ -318,7 +318,7 @@ public class ControleAcervo extends JFrame {
 		});
 
 		listaLivros.setBounds(EXIT_ON_CLOSE, ABORT, 100, 450);
-		listaLivros.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		listaLivros.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		listaLivros.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		listaLivros.setVisibleRowCount(5);
 		GridBagConstraints gbc_scroll = new GridBagConstraints();

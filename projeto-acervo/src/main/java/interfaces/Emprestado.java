@@ -231,13 +231,13 @@ public class Emprestado extends JFrame {
 		panel.add(textField_isbn_1, gbc_textField_isbn_1);
 		textField_isbn_1.setColumns(10);
 
-		JLabel labelTitulo1 = new JLabel("Título:");
+		JLabel labelTitulo1 = new JLabel("Titulo:");
 		GridBagConstraints gbc_labelTitulo1 = new GridBagConstraints();
 		gbc_labelTitulo1.anchor = GridBagConstraints.EAST;
 		gbc_labelTitulo1.insets = new Insets(0, 0, 5, 5);
 		gbc_labelTitulo1.gridx = 1;
 		gbc_labelTitulo1.gridy = 7;
-		panel.add(labelTitulo1);
+		panel.add(labelTitulo1, gbc_labelTitulo1);
 
 		textField_Titulo_1 = new JTextField();
 		textField_Titulo_1.setEditable(false);
@@ -256,7 +256,7 @@ public class Emprestado extends JFrame {
 		gbc_labelDataEmprestimo1.insets = new Insets(0, 0, 5, 5);
 		gbc_labelDataEmprestimo1.gridx = 1;
 		gbc_labelDataEmprestimo1.gridy = 8;
-		panel.add(labelDataEmprestimo1);
+		panel.add(labelDataEmprestimo1, gbc_labelDataEmprestimo1);
 
 		textField_dataEmprestimo_1 = new JTextField();
 		textField_dataEmprestimo_1.setEditable(false);
@@ -275,7 +275,7 @@ public class Emprestado extends JFrame {
 		gbc_labelDataDevolucao1.insets = new Insets(0, 0, 5, 5);
 		gbc_labelDataDevolucao1.gridx = 1;
 		gbc_labelDataDevolucao1.gridy = 9;
-		panel.add(labelDataDevolucao1);
+		panel.add(labelDataDevolucao1, gbc_labelDataDevolucao1);
 
 		textField_data_devolucao_1 = new JTextField();
 		textField_data_devolucao_1.setEditable(false);
@@ -293,7 +293,7 @@ public class Emprestado extends JFrame {
 		gbc_labelDiasAtraso1.insets = new Insets(0, 0, 5, 5);
 		gbc_labelDiasAtraso1.gridx = 1;
 		gbc_labelDiasAtraso1.gridy = 10;
-		panel.add(labelDiasAtraso1);
+		panel.add(labelDiasAtraso1, gbc_labelDiasAtraso1);
 
 		textField_diasAtrasados_1 = new JTextField();
 		textField_diasAtrasados_1.setEditable(false);
@@ -308,21 +308,24 @@ public class Emprestado extends JFrame {
 		JLabel labelDevolvido = new JLabel("Devolvido:");
 		GridBagConstraints gbc_labelDevolvido = new GridBagConstraints();
 		gbc_labelDevolvido.anchor = GridBagConstraints.EAST;
-		gbc_labelDevolvido.insets = new Insets(0, 0, 15, 5);
+		gbc_labelDevolvido.insets = new Insets(0, 0, 5, 5);
 		gbc_labelDevolvido.gridx = 1;
 		gbc_labelDevolvido.gridy = 11;
-		panel.add(labelDevolvido);
+		panel.add(labelDevolvido, gbc_labelDevolvido);
 
 		textFieldDevolvido = new JTextField();
 		textFieldDevolvido.setEditable(false);
 		GridBagConstraints gbc_textFieldDevolvido = new GridBagConstraints();
 		gbc_textFieldDevolvido.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textFieldDevolvido.insets = new Insets(0, 0, 5, 5);
 		gbc_textFieldDevolvido.gridwidth = 3;
-		gbc_textFieldDevolvido.insets = new Insets(0, 0, 15, 5);
 		gbc_textFieldDevolvido.gridx = 2;
+		panel.add(textFieldDevolvido, gbc_textFieldDevolvido);
+		textFieldDevolvido.setColumns(10);
+		//gbc_textFieldDevolvido.gridy = 11;
 
 		JButton botaoDevolver_1 = new JButton("DEVOLVER");
-		botaoDevolver_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		botaoDevolver_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		botaoDevolver_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -342,7 +345,7 @@ public class Emprestado extends JFrame {
 
 		GridBagConstraints gbc_botaoDevolver_1 = new GridBagConstraints();
 		gbc_botaoDevolver_1.insets = new Insets(0, 0, 15, 5);
-		gbc_botaoDevolver_1.gridx = 7;
+		gbc_botaoDevolver_1.gridx = 3;
 		gbc_botaoDevolver_1.gridy = 11;
 		panel.add(botaoDevolver_1, gbc_botaoDevolver_1);
 

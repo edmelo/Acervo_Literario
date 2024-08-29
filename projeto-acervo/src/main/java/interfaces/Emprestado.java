@@ -108,7 +108,7 @@ public class Emprestado extends JFrame {
 		panel.add(labelVisualizarEmprestimo, gbc_labelVisualizarEmprestimo);
 
 		JButton botaoVoltar = new JButton("VOLTAR");
-		botaoVoltar.setFont(new Font("Tahoma", Font.BOLD, 13));
+		botaoVoltar.setFont(new Font("Tahoma", Font.BOLD, 15));
 		botaoVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -117,7 +117,7 @@ public class Emprestado extends JFrame {
 		});
 		GridBagConstraints gbc_botaoVoltar = new GridBagConstraints();
 		gbc_botaoVoltar.insets = new Insets(30, 0, 60, 0);
-		gbc_botaoVoltar.gridx = 7;
+		gbc_botaoVoltar.gridx = 6;
 		gbc_botaoVoltar.gridy = 0;
 		panel.add(botaoVoltar, gbc_botaoVoltar);
 
@@ -346,7 +346,7 @@ public class Emprestado extends JFrame {
 		GridBagConstraints gbc_botaoDevolver_1 = new GridBagConstraints();
 		gbc_botaoDevolver_1.insets = new Insets(0, 0, 15, 5);
 		gbc_botaoDevolver_1.gridx = 3;
-		gbc_botaoDevolver_1.gridy = 11;
+		gbc_botaoDevolver_1.gridy = 12;
 		panel.add(botaoDevolver_1, gbc_botaoDevolver_1);
 
 	}

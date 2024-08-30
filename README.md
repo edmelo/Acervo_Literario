@@ -89,4 +89,5 @@ Para executar a aplicação, siga os passos abaixo:
 O projeto é uma aplicação desktop em Java para gerenciar um acervo literário, utilizando MySQL para armazenamento de dados e Maven para gerenciamento de dependências. A interface gráfica é construída com `Swing` e organizada com `GridBagLayout`. O sistema também integra a API do Google Books para enriquecer as informações dos livros cadastrados.
 
 <h2>Autor</h2>
-[<img src="https://avatars.githubusercontent.com/u/10143322?v=4" title="Ednaldo B Melo" width="115"/><br><sub>Ednaldo B Melo</sub>](https://github.com/edmelo)
+| [<img src="https://avatars.githubusercontent.com/u/10143322?v=4" width="115"><br><sub>Ednaldo B Melo</sub>](https://github.com/edmelo) |
+| :---: |

@@ -4,7 +4,6 @@ controladores\LeitorControlador.class
 interfaces\LivroEdicao.class
 interfaces\VisualizarEmprestimos.class
 interfaces\LivrosLista$3.class
-controladores\BibliotecarioControlador.class
 interfaces\MenuPrincipal.class
 interfaces\LivroEdicao$2.class
 interfaces\VisualizarAmigo$4.class
@@ -31,7 +30,6 @@ interfaces\EmprestarLivro$1.class
 dados\InterfaceEmprestimoDados.class
 interfaces\Emprestado$1.class
 interfaces\EmprestarLivro.class
-dados\InterfaceBibliotecarioDados.class
 interfaces\CadastrarLivro$3.class
 controladores\ExcecaoControlador.class
 dados\InterfaceLeitorDados.class
@@ -39,7 +37,6 @@ interfaces\TelaInicial.class
 interfaces\VisualizarAmigo$1.class
 interfaces\MenuPrincipal$3.class
 interfaces\Emprestado$2.class
-dados\BibliotecarioDados.class
 dados\LeitorDados.class
 interfaces\EmprestarLivro$2.class
 interfaces\CadastrarLivro.class

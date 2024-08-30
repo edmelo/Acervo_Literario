@@ -38,7 +38,7 @@ public class ConexaoDados {
 		try (Connection con = DriverManager.getConnection(url, usuario, senha); 
 				Statement stmt = con.createStatement()) {
 
-			String createDatabaseQuery = "CREATE DATABASE IF NOT EXISTS sib";
+			String createDatabaseQuery = "CREATE DATABASE IF NOT EXISTS acervo";
 			try (Statement statement = con.createStatement()) {
 				statement.executeUpdate(createDatabaseQuery);
 			}
@@ -48,7 +48,7 @@ public class ConexaoDados {
 			System.err.println("Erro ao criar o banco de dados");
 		}
 		
-		try (Connection con = DriverManager.getConnection(url + "sib", usuario, senha); 
+		try (Connection con = DriverManager.getConnection(url + "acervo", usuario, senha);
 				Statement stmt = con.createStatement()) {
 
 			InputStream inputStream = getClass().getResourceAsStream("/bd/acervo-database.sql");
@@ -83,7 +83,7 @@ public class ConexaoDados {
 	
 	public void inserirDadosNoSistema() {
 		
-		try (Connection con = DriverManager.getConnection(url + "sib", usuario, senha); 
+		try (Connection con = DriverManager.getConnection(url + "acervo", usuario, senha);
 				Statement stmt = con.createStatement()) {
 
 			InputStream inputStream = getClass().getResourceAsStream("/bd/acervo-insercao-dados.sql");

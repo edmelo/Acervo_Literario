@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/projeto-acervo/src/main/java/dados/ConexaoDados.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/projeto-acervo/src/main/java/dados/EmprestimoDados.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/projeto-acervo/src/main/java/dados/LeitorDados.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/projeto-acervo/src/main/java/dados/LivroDados.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/projeto-acervo/src/main/resources/bd/acervo-database.sql" dialect="GenericSQL" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-# Projeto da disciplina de LPOO de Analise e Desenvolvimento de Sistema do IFPe - Paulista
+# Projeto da disciplina de LPOO de Analise e Desenvolvimento de Sistema do IFPE - Paulista
 
 # Acervo_Literario
 Aplicação Desktop em Java para acervo literário pessoal
